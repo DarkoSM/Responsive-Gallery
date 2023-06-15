@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Gallery</title>
+    <style>
+       h1 {
+
+        text-align:center;
+       }
+       
+       #container {
+            display: grid;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80vw;
+            height: 50vh;
+            grid-auto-flow: row;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 40px;
+            box-sizing: border-box;
+            align-items: center;
+           
+        }
+
+        .thumb {
+            
+            width: 100%;
+            height: 100%;
+            min-width: 100px;
+            min-height: 150px;
+            background-color: rgb(144, 192, 255);
+            background-image: url(Images/placeholder-image.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position-x: center;
+            border-radius: 5%;
+            display: grid;
+            overflow: hidden;
+            box-shadow: 0px 1px 12px rgb(146, 146, 146);
+            
+            
+            
+        }
+
+        .banner {
+            background-color: rgb(241, 248, 255);
+            height: 15%;
+            text-align: center;
+            align-self: end;     
+        }
+
+        p {
+            font-size: large;
+            grid-column: 1/6;
+            grid-row: 3/3;
+            text-align: center;
+        }
+
+        @media screen and (min-width: 992px) {
+            #container{
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+            #container{
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
+            }
+            .thumb{
+                min-height: 150px;
+            }
+            p {
+            grid-column: 1/4;
+            grid-row: 5;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            #container{
+            grid-template-rows: repeat(12, 1fr);
+            grid-template-columns: 1fr;
+            }
+            .thumb{
+                min-height: 200px;
+                min-width: 200px;
+            }
+            p {
+            grid-column: 1/1;
+            grid-row: 11/12;
+            }
+        }
+            
+    </style>
+</head>
+
+<body>
+    <h1>Gallery Heading</h1>
+    <div id="container">
+        <div class="thumb"><div class="banner">Image Title</div></div>
+        <div class="thumb"><div class="banner">Image Title</div></div>
+        <div class="thumb"><div class="banner">Image Title</div></div>
+        <div class="thumb"><div class="banner">Image Title</div></div>
+        <div class="thumb"><div class="banner">Image Title</div></div>
+        <div class="thumb"><div class="banner">Image Title</div></div>
+        <div class="thumb"><div class="banner">Image Title</div></div>
+        <div class="thumb"><div class="banner">Image Title</div></div>
+        <div class="thumb"><div class="banner">Image Title</div></div>
+        <div class="thumb"><div class="banner">Image Title</div></div>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+</body>
+
+</html>
